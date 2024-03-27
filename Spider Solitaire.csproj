@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C30826B4-9216-4708-A0BF-E4823236EAD8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Spider_Solitaire</RootNamespace>
+    <AssemblyName>Spider Solitaire</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="sfml-audio">
+      <HintPath>SFML.Net-2.4\lib\sfml-audio.dll</HintPath>
+    </Reference>
+    <Reference Include="sfml-graphics">
+      <HintPath>SFML.Net-2.4\lib\sfml-graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="sfml-system">
+      <HintPath>SFML.Net-2.4\lib\sfml-system.dll</HintPath>
+    </Reference>
+    <Reference Include="sfml-window">
+      <HintPath>SFML.Net-2.4\lib\sfml-window.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Card.cs" />
+    <Compile Include="AnimationWrapperST.cs" />
+    <Compile Include="AnimationWrapper.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="FillFoundationPile.cs" />
+    <Compile Include="DealOneRound.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="Move.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="Deck.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="csfml-audio-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-graphics-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-system-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-window-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\aceOfSpades.png" />
+    <Content Include="Images\backOfCard.png" />
+    <Content Include="Images\eightOfSpades.png" />
+    <Content Include="Images\fiveOfSpades.png" />
+    <Content Include="Images\fourOfSpades.png" />
+    <Content Include="Images\jackOfSpades.png" />
+    <Content Include="Images\kingOfSpades.png" />
+    <Content Include="Images\nineOfSpades.png" />
+    <Content Include="Images\queenOfSpades.png" />
+    <Content Include="Images\sevenOfSpades.png" />
+    <Content Include="Images\sixOfSpades.png" />
+    <Content Include="Images\tenOfSpades.png" />
+    <Content Include="Images\threeOfSpades.png" />
+    <Content Include="Images\twoOfSpades.png" />
+    <Content Include="nineOfSpades.png" />
+    <Content Include="openal32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenTK.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
