@@ -8,13 +8,13 @@ namespace Spider_Solitaire
     class View
     {
         private uint boundsWidth = 1400;
-        private uint boundsHeight = 1000;
+        private uint boundsHeight = 970;
         private int stackDistance = 30;
         private int distBtwPiles = 40;
         private int cardHeight = 0; // set cardHeight
         private int cardWidth = 0; // set cardWidth
         private int startPointX = 100;
-        private int startPointY = 100;
+        private int startPointY = 50;
         private long frameStartTime;
         private long maxTicksPerFrame = (long)(1000 / 300);
         private Image image; // initiate
@@ -346,7 +346,7 @@ namespace Spider_Solitaire
                     limitFPS();
                 }
                 // keep animating more frames
-                for(i = aniList.Count; i < aniList.Count + 600; i++)
+                for(i = aniList.Count; i < aniList.Count + 400; i++)
                 {
                     frameStartTime = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
                     window.Clear();
@@ -428,7 +428,7 @@ namespace Spider_Solitaire
                     limitFPS();
                 }
                 // keep animating more frames
-                for(i = aniList.Count; i < aniList.Count + 600; i++)
+                for(i = aniList.Count; i < aniList.Count + 400; i++)
                 {
                     frameStartTime = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
                     window.Clear();

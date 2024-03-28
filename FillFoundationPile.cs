@@ -55,7 +55,7 @@ namespace Spider_Solitaire
             }
             // create second animation which shrinks the pile
             List<AnimationWrapperST> aniList2 = new List<AnimationWrapperST>();
-            numFrames = 0;
+            numFrames = 5;
             int count = 0;
             for(int i = model.getMovePile().Count - 1; i >= 0; i--)
             {

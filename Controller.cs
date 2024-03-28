@@ -10,7 +10,6 @@ namespace Spider_Solitaire
     {
         private Model model = new Model();
         private View view = new View();
-        private bool pressedLastFrame = false;
         private bool once = true;
         private int xPos = 0;
         private int yPos = 0;
@@ -133,8 +132,8 @@ namespace Spider_Solitaire
                         }
                     }
                 }
-                pressedLastFrame = true;
-            }
+                once = true;
+           }
         }
 
         public void handleMouseRelease(object sender, MouseButtonEventArgs e)
@@ -189,27 +188,29 @@ namespace Spider_Solitaire
                     }
                 }
                 once = true;
-                pressedLastFrame = false;
+
             }
-            
+
         }
 
         public void handleMouseMove(object sender, MouseMoveEventArgs e)
         {
             // check if left button is still pressed
             RenderWindow window = (RenderWindow)sender;
-            if (pressedLastFrame)
+            if (Mouse.IsButtonPressed(Mouse.Button.Left))
             {
                 // drag movePile
                 if(model.getMovePile().Count != 0)
                 {
-                    Vector2f mousePos = new Vector2f(Mouse.GetPosition().X, Mouse.GetPosition().Y);
+                    Vector2f mousePos = new Vector2f(Mouse.GetPosition(window).X, Mouse.GetPosition(window).Y);
                     List<Card> movePile = model.getMovePile();
                     Vector2f cardPos = new Vector2f(movePile[movePile.Count - 1].getSprite().Position.X, movePile[movePile.Count - 1].getSprite().Position.Y);
-                    if(mousePos.X > xPos && mousePos.Y > yPos && mousePos.X - view.getBoundsWidth() < xPos && mousePos.Y - view.getBoundsHeight() < yPos)
+                    if(mousePos.X > 0 && mousePos.Y > 0 && mousePos.X - view.getBoundsWidth() < 0 && mousePos.Y - view.getBoundsHeight() < 0)
                     {
                         if (once)
                         {
+                            // This bit of code is to get the difference between the cursor and the card, so that the card begins its move in relation to the cursor
+                            // when first clicked. It is only done ONCE, which is why the "once" bool is used.
                             xDiff = (int)(mousePos.X - cardPos.X);
                             yDiff = (int)(mousePos.Y - cardPos.Y);
                             once = false;
@@ -221,11 +222,7 @@ namespace Spider_Solitaire
                             movePile[i].getSprite().Position = new Vector2f(xPos, yPos + view.getStackDistance(movePile) * (movePile.Count - 1 - i));
                         }
                     }
-                    pressedLastFrame = true;
-                }
-                // draw all cards
-                // TODO: check if this is correct place to draw....
-                view.draw(window);
+               }
             }
         }
 
