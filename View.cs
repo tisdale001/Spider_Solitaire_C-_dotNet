@@ -336,7 +336,7 @@ namespace Spider_Solitaire
                 {
                     frameStartTime = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
                     window.Clear();
-                    for(int j = 0; j < i + 1; j++)
+                    for(int j = i; j >= 0; j--)
                     {
                         aniList[j].advance(i - aniList[j].getID());
                         window.Draw(aniList[j].getSprite());
@@ -350,7 +350,7 @@ namespace Spider_Solitaire
                 {
                     frameStartTime = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
                     window.Clear();
-                    for(int j = 0; j < aniList.Count; j++)
+                    for(int j = aniList.Count - 1; j >= 0; j--)
                     {
                         aniList[j].advance(i - aniList[j].getID());
                         window.Draw(aniList[j].getSprite());
