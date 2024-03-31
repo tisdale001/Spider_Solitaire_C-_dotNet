@@ -283,7 +283,7 @@ namespace Spider_Solitaire
             int n = 0;
             for(int i = 0; i < 4 * staggerAmt; i += staggerAmt)
             {
-                AnimationWrapperST animation = new AnimationWrapperST(model.getMovePile()[n].getSprite(), view.getNextXPos(model.getDrawPile(i)), view.getNextYPos(model.getDrawPile(1)),
+                AnimationWrapperST animation = new AnimationWrapperST(model.getMovePile()[n].getSprite(), view.getNextXPos(model.getDrawPile(1)), view.getNextYPos(model.getDrawPile(1)),
                     view.getNextXPos(model.getMainPile(m)), view.getNextYPos(model.getMainPile(m)), numFrames);
                 animation.setID(i);
                 aniList.Add(animation);
