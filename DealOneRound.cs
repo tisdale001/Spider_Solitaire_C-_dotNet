@@ -47,7 +47,7 @@ namespace Spider_Solitaire
                     k++;
                 }
                 // iterate through aniList staggering cards according to ID
-                for(int i = 0; i < numFrames + 10 * staggerAmt; i++)
+                for(int i = 0; i <= numFrames + 10 * staggerAmt; i++)
                 {
                     foreach(AnimationWrapperST item in aniList)
                     {
@@ -109,7 +109,7 @@ namespace Spider_Solitaire
                 k--;
             }
             // iterate through aniList staggering cards according to ID
-            for(int i = 0; i < numFrames + 10 * staggerAmt; i++)
+            for(int i = 0; i <= numFrames + 10 * staggerAmt; i++)
             {
                 foreach(AnimationWrapperST item in aniList)
                 {

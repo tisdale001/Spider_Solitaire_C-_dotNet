@@ -60,7 +60,7 @@ namespace Spider_Solitaire
                 j++;
             }
             // iterate through aniList: calling advance()
-            for(int i = 0; i < numFrames; i++)
+            for(int i = 0; i <= numFrames; i++)
             {
                 foreach(AnimationWrapper item in aniList)
                 {
@@ -106,7 +106,7 @@ namespace Spider_Solitaire
                     j++;
                 }
                 // iterate through aniList: calling advance()
-                for(int i = 0; i < numFrames; i++)
+                for(int i = 0; i <= numFrames; i++)
                 {
                     foreach(AnimationWrapper item in aniList)
                     {

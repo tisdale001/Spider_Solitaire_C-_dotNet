@@ -35,9 +35,16 @@ namespace Spider_Solitaire
 
         public void advance(int frame)
         {
-            float bXPos = beginXPos + (xToMove * frame);
-            float bYPos = beginYPos + (yToMove * frame);
-            cardSprite.Position = new Vector2f(bXPos, bYPos);
+            if (frame == numFrames)
+            {
+                cardSprite.Position = new Vector2f(endXPos, endYPos);
+            }
+            else
+            {
+                float bXPos = beginXPos + (xToMove * frame);
+                float bYPos = beginYPos + (yToMove * frame);
+                cardSprite.Position = new Vector2f(bXPos, bYPos);
+            }
         }
 
         public void setID(int num)

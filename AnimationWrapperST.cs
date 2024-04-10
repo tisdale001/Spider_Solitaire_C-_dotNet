@@ -33,9 +33,10 @@ namespace Spider_Solitaire
         public void advance(int frame)
         {
             // self terminate by making numFrames the limit of movement
-            if(frame > numFrames)
+            if(frame >= numFrames)
             {
-                frame = numFrames;
+                cardSprite.Position = new Vector2f(endXPos, endYPos);
+                return;
             }
             float bXPos = beginXPos + (xToMove * frame);
             float bYPos = beginYPos + (yToMove * frame);
