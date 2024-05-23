@@ -383,7 +383,7 @@ namespace Spider_Solitaire
                     int j = 1;
                     for(int i = pile.Count - 1; i >= pile.Count - 13; i--)
                     {
-                        if(pile[i].Value != j)
+                        if (pile[i].FaceUp != true || pile[i].Value != j)
                         {
                             return false;
                         }
